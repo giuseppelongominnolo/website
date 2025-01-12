@@ -20,6 +20,10 @@ body {
 
 /* HEADER */
 header {
+  display: flex;              /* Per posizionare logo e titolo sulla stessa riga */
+  flex-direction: column;     /* Su dispositivi stretti, logo e titolo vanno in colonna */
+  align-items: center;        /* Centra orizzontalmente */
+  justify-content: center;    /* Centra verticalmente */
   text-align: center;
   padding: 40px 20px;
   background-color: rgba(255, 255, 255, 0.1); /* sfondo semitrasparente */
@@ -27,8 +31,14 @@ header {
 }
 
 .logo {
-  max-width: 500px;
-  margin-bottom: 20px;
+  /* Aumenta la dimensione per ingrandire il logo */
+  max-width: 500px;  
+  margin-bottom: 10px; /* margine tra logo e titolo */
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 /* MAIN */
@@ -55,7 +65,7 @@ main {
   margin-bottom: 20px;
   color: #0073e6;
   font-weight: 600;
-  font-size: 1.2rem; /* puoi regolare la dimensione se vuoi */
+  font-size: 1.2rem; 
 }
 
 /* LISTA LINK */
@@ -85,7 +95,7 @@ main {
   margin-right: 8px;
 }
 
-/* HOVER EFFETTO (aggiunto) */
+/* HOVER EFFETTO */
 .card a:hover {
   background-color: #005bb5;
   transform: translateY(-2px);
@@ -100,4 +110,3 @@ footer {
   color: #fff;
   font-size: 0.85rem;
 }
-
