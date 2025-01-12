@@ -55,7 +55,7 @@ main {
   margin-bottom: 20px;
   color: #0073e6;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* puoi regolare la dimensione se vuoi */
 }
 
 /* LISTA LINK */
@@ -77,7 +77,7 @@ main {
   background-color: #0073e6;
   padding: 12px 20px;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* ICONE (Font Awesome) PRIMA DEL TESTO */
@@ -85,9 +85,11 @@ main {
   margin-right: 8px;
 }
 
-/* HOVER EFFETTO */
+/* HOVER EFFETTO (aggiunto) */
 .card a:hover {
   background-color: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* FOOTER */
@@ -98,3 +100,4 @@ footer {
   color: #fff;
   font-size: 0.85rem;
 }
+
