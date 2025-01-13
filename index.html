@@ -1,63 +1,134 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Giuseppe Longo Minnolo</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome (per le icone) -->
-  <script src="https://kit.fontawesome.com/aa4fca0c4f.js" crossorigin="anonymous"></script>
-  
-  <!-- Collega il tuo file CSS -->
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Stili di base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    button {
+      padding: 8px 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    /* Layout semplice per la pagina */
+    header, main, footer {
+      margin-bottom: 20px;
+    }
+    h1, h2, h3, p {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <!-- Logo (possibilmente con sfondo trasparente) -->
-    <img src="logo.png" alt="Logo Giuseppe Longo Minnolo" class="logo" />
-    <!-- Titolo inserito nuovamente -->
-    <h1>Giuseppe Longo Minnolo</h1>
-  </header>
 
-  <main>
-    <div class="card">
-      <h2>Benvenuto! Qui trovi i link ai miei profili accademici e professionali.</h2>  
-<ul>
-  <li>
-    <a href="https://www.di3a.unict.it/docenti/giuseppe.longominnolo" target="_blank">
-      <i class="fas fa-university"></i> Università di Catania
-    </a>
-  </li>
-  <li>
-    <a href="https://www.scopus.com/authid/detail.uri?authorId=57214088563" target="_blank">
-      <i class="fas fa-search"></i> Scopus
-    </a>
-  </li>
-  <li>
-    <a href="https://scholar.google.com/citations?user=g6GbU10AAAAJ&hl=it&oi=ao" target="_blank">
-      <i class="fas fa-graduation-cap"></i> Google Scholar
-    </a>
-  </li>
-  <li>
-    <a href="https://www.researchgate.net/profile/Giuseppe-Longo-Minnolo" target="_blank">
-      <i class="fas fa-flask"></i> ResearchGate
-    </a>
-  </li>
-  <li>
-    <a href="https://it.linkedin.com/in/giuseppelongominnolo" target="_blank">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-  </li>
-</ul>
-    </div>
-  </main>
+  <!-- Bottone per lo switch di lingua -->
+  <button id="switchBtn">English</button>
+
+  <!-- CONTENUTO IN ITALIANO (visibile di default) -->
+  <div id="content-it">
+    <h1>Benvenuto!</h1>
+    <p>Qui trovi i link ai miei profili accademici e professionali</p>
+    <ul>
+      <li>
+        <a href="https://www.di3a.unict.it/docenti/giuseppe.longominnolo" target="_blank">
+          Università di Catania
+        </a>
+      </li>
+      <li>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=57214088563" target="_blank">
+          Scopus
+        </a>
+      </li>
+      <li>
+        <a href="https://scholar.google.com/citations?user=g6GbU10AAAAJ&hl=it&oi=ao" target="_blank">
+          Google Scholar
+        </a>
+      </li>
+      <li>
+        <a href="https://www.researchgate.net/profile/Giuseppe-Longo-Minnolo" target="_blank">
+          ResearchGate
+        </a>
+      </li>
+      <li>
+        <a href="https://it.linkedin.com/in/giuseppelongominnolo" target="_blank">
+          LinkedIn
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- CONTENUTO IN INGLESE (nascosto inizialmente) -->
+  <div id="content-en" class="hidden">
+    <h1>Welcome!</h1>
+    <p>Here you can find my academic and professional profiles</p>
+    <ul>
+      <li>
+        <a href="https://www.di3a.unict.it/docenti/giuseppe.longominnolo" target="_blank">
+          University of Catania
+        </a>
+      </li>
+      <li>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=57214088563" target="_blank">
+          Scopus
+        </a>
+      </li>
+      <li>
+        <a href="https://scholar.google.com/citations?user=g6GbU10AAAAJ&hl=it&oi=ao" target="_blank">
+          Google Scholar
+        </a>
+      </li>
+      <li>
+        <a href="https://www.researchgate.net/profile/Giuseppe-Longo-Minnolo" target="_blank">
+          ResearchGate
+        </a>
+      </li>
+      <li>
+        <a href="https://it.linkedin.com/in/giuseppelongominnolo" target="_blank">
+          LinkedIn
+        </a>
+      </li>
+    </ul>
+  </div>
 
   <footer>
     <p>&copy; 2025 Giuseppe Longo Minnolo</p>
   </footer>
+
+  <script>
+    const switchBtn = document.getElementById('switchBtn');
+    const contentIt = document.getElementById('content-it');
+    const contentEn = document.getElementById('content-en');
+
+    let isItalian = true; // di default mostriamo l'italiano
+
+    switchBtn.addEventListener('click', () => {
+      if (isItalian) {
+        // Passiamo all'inglese
+        contentIt.classList.add('hidden');
+        contentEn.classList.remove('hidden');
+        switchBtn.textContent = 'Italiano'; // Cambia il testo del bottone
+        isItalian = false;
+      } else {
+        // Torniamo all'italiano
+        contentEn.classList.add('hidden');
+        contentIt.classList.remove('hidden');
+        switchBtn.textContent = 'English';
+        isItalian = true;
+      }
+    });
+  </script>
 </body>
 </html>
