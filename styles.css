@@ -20,25 +20,42 @@ body {
 
 /* HEADER */
 header {
-  display: flex;              /* Per posizionare logo e titolo sulla stessa riga */
-  flex-direction: column;     /* Su dispositivi stretti, logo e titolo vanno in colonna */
-  align-items: center;        /* Centra orizzontalmente */
-  justify-content: center;    /* Centra verticalmente */
+  display: flex;              
+  flex-direction: column;     /* Logo e titolo in colonna, centrati */
+  align-items: center;        
+  justify-content: center;
   text-align: center;
   padding: 40px 20px;
-  background-color: rgba(255, 255, 255, 0.1); /* sfondo semitrasparente */
+  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
 
 .logo {
-  /* Aumenta la dimensione per ingrandire il logo */
-  max-width: 500px;  
-  margin-bottom: 10px; /* margine tra logo e titolo */
+  max-width: 500px;
+  margin-bottom: 10px;
 }
 
 header h1 {
   font-size: 1.8rem;
   font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Pulsante switch */
+#switchBtn {
+  cursor: pointer;
+  background-color: #fff;
+  color: #0073e6;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+#switchBtn:hover {
+  background-color: #e5e5e5;
 }
 
 /* MAIN */
@@ -90,12 +107,12 @@ main {
   transition: all 0.3s ease;
 }
 
-/* ICONE (Font Awesome) PRIMA DEL TESTO */
+/* Icone (Font Awesome) prima del testo */
 .card a i {
   margin-right: 8px;
 }
 
-/* HOVER EFFETTO */
+/* Hover Effetto */
 .card a:hover {
   background-color: #005bb5;
   transform: translateY(-2px);
@@ -109,4 +126,9 @@ footer {
   background-color: rgba(0, 0, 0, 0.15);
   color: #fff;
   font-size: 0.85rem;
+}
+
+/* Nascondi la versione in inglese di default */
+.hidden {
+  display: none;
 }
